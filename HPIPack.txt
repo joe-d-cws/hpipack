@@ -1,0 +1,117 @@
+
+HPIPack 1.7 - HPI File Packer
+
+HPIPack is a simple program allowing you to create your own HPI-format files.
+
+To create an HPI file (or UFO or CCX or KMP or whatever), do the following:
+
+1. Create a directory to contain the files you want to pack.
+
+2. Create any necessary subdirectories.  For example, maps have to live in a
+"maps" subdirectory.
+
+3. Copy the files you want to pack into the new directory structure.
+
+4. Run HPIPack, and give it the name of the directory, and the name of the 
+HPI or UFO file to pack it into.
+
+6. Select the program (TA or TAK).
+
+7. Select the compression method.
+
+8. Hit the "Pack" button.
+
+Here's an example.  You have a nifty new map called AMAZO.  It has a TNT file, an OTA file,
+and a TXT file describing it.  To pack them all up into a single AMAZO.UFO file, do this:
+
+1. Create a directory called C:\PACK.
+
+2. Create a MAPS subdirectory (C:\PACK\MAPS).
+
+3. Copy AMAZO.TNT, AMAZO.OTA and AMAZO.TXT to C:\PACK\MAPS.
+
+4. Run HPIPack.
+
+5. Set the "Directory to pack" to C:\PACK
+
+6. Set the "Destination HPI file" C:\Cavedog\Totala\AMAZO.UFO (or wherever you've
+installed TA - You know the drill).
+
+7. Select the program to pack for, either TA or TAK.
+
+8. Select the compression method.  
+   For TA, 'TA:CC' is faster and gives better results.
+   For TAK, 'Auto' will compress files only if doing so will save space.
+
+9. Hit the Pack button.
+
+10. When it's done, clean out the PACK directory.
+
+*******************************************************************************
+                    IMPORTANT NOTE FOR TAK UNIT CREATION
+*******************************************************************************
+
+TA:Kingdoms requires a digital signature for playing "official" games.
+
+In order to get the game to recognize third-party units, you must specify
+the "-disablecavedogverification" command line option (without the quotes).
+
+In multiplayer games, all players must have that option running or the unit won't
+be available.
+
+*******************************************************************************
+
+*******************************************************************************
+
+
+Command line operation
+
+You can also operate HPIPack from the command line.
+
+HPIPack [-d DirectoryToPack] [-f HPIFileName] [auto]
+
+There has to be a space between the -d and -f options, and their file/directory
+names.
+
+The "auto" option tells the program to start packing automatically, and exit
+when complete.  If this isn't there, it will wait for you to hit the pack button.
+
+If you're going to use this in a batch file, use the 'start /w' command to make 
+the batch file pause until the program is complete.
+
+If you have any questions, please let me know!
+
+Joe D
+joed@cws.org
+
+Ver 1.7 Changes
+Added TAK support
+
+Ver 1.6 Changes
+Released source code
+
+Ver 1.5 Changes
+Added a "No compression" option.
+
+Ver 1.4 Changes
+Added ZLib compression.
+Added command line options.
+
+Ver 1.3 Changes
+
+Empty directories now added as empty directories instead of 0-length files.
+
+Ver 1.2 Changes
+
+Fixed progress bars for real!
+Much much faster.
+Compression is a bit better.
+Added more status messages.
+
+Ver 1.1 Changes
+
+Fixed progress bars
+
+ZLib compression and decompression by Jean-loup Gailly (compression) and 
+Mark Adler (decompression). 
+For more info, see the zlib Home Page at http://www.cdrom.com/pub/infozip/zlib/
